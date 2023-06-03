@@ -1,0 +1,46 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      },
+      {
+        "src": "/api/posts",
+        "methods": ["GET"],
+        "dest": "api/posts/read.js"
+      },
+      {
+        "src": "/api/posts/:id",
+        "methods": ["GET"],
+        "dest": "api/posts/readById.js"
+      },
+      {
+        "src": "/api/posts",
+        "methods": ["POST"],
+        "dest": "api/posts/create.js"
+      },
+      {
+        "src": "/api/posts/:id",
+        "methods": ["PUT"],
+        "dest": "api/posts/update.js"
+      },
+      {
+        "src": "/api/posts/:id",
+        "methods": ["DELETE"],
+        "dest": "api/posts/delete.js"
+      }
+    ]
+  }
+
+
+  
+
+
+  
